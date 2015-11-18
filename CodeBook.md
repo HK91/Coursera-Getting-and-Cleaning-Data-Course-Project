@@ -1,6 +1,6 @@
 ##Introduction
 
-a)The script run_analysis.Rperforms the 5 steps described in the course project's definition.
+a)The script run_analysis.R performs the 5 steps described in the course project's definition.
 
 b)First, all the similar data is merged using the rbind() function. By similar, we address those files having the same number of  columns and referring to the same entities.
 
@@ -14,14 +14,14 @@ f)Finally, we generate a new dataset with all the average measures for each subj
 
 ##Variables
 
-a)x_train, y_train, x_test, y_test, subject_train and subject_test contain the data from the downloaded files.
+a)train_x, train_y, test_x, test_y, subject_train and subject_test contain the data from the downloaded files.
 
-b)x_data, y_data and subject_data merge the previous datasets to further analysis.
+b)data_x, data_y and subject_data merge the previous datasets to further analysis.
 
-c)features contains the correct names for the x_data dataset, which are applied to the column names stored in mean_and_std_features, a numeric vector used to extract the desired data.
+c)features contains the correct names for the data_x dataset, which are applied to the column names stored in mean_and_std_features, a numeric vector used to extract the desired data.
 
 d)A similar approach is taken with activity names through the activities variable.
 
-e)all_data merges x_data, y_data and subject_data in a big dataset.
+e)all_data merges data_x, data_y and subject_data in a big dataset.
 
 f)Finally, averages_data contains the relevant averages which will be later stored in a .txt file. ddply() from the plyr package is used to apply colMeans() and ease the development.
