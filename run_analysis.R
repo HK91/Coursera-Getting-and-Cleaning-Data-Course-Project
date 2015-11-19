@@ -2,21 +2,20 @@
 # Merge the training and test sets to create one data set 
 ############################################################################### 
 
-train_x <- read.table("train/train_x.txt") 
-train_y <- read.table("train/train_y.txt") 
+train_x <- read.table("train/x_train.txt") 
+train_y <- read.table("train/y_train.txt") 
 subject_train <- read.table("train/subject_train.txt") 
- 
 
-x_test <- read.table("test/X_test.txt") 
-y_test <- read.table("test/y_test.txt") 
+test_x <- read.table("test/X_test.txt") 
+test_y <- read.table("test/y_test.txt") 
 subject_test <- read.table("test/subject_test.txt") 
 
 # create 'x' data set 
-data_x <- rbind(train_x, x_test) 
- 
+data_x <- rbind(train_x,test_x) 
+
 # create 'y' data set 
-data_y <- rbind(train_y, y_test) 
- 
+data_y <- rbind(train_y, test_y) 
+
 # create 'subject' data set 
 subject_data <- rbind(subject_train, subject_test) 
 
